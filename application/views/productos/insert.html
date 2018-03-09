@@ -1,0 +1,36 @@
+$def with(message)
+
+
+<h3>
+    <a href="/productos">productos</a>
+</h3>
+$if message == "Insert succefull!!":
+    <div class="alert alert-success">
+        $message
+    </div>
+$elif message == "Error: check values!!!":
+    <div class="alert alert-warning">
+        <strong>Warning</strong> $message
+    </div>
+<form action="" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="producto">producto</label>
+        <input required id="producto" type="text" class="form-control" name="producto" size="30" />
+    </div>
+    <div class="form-group">
+        <label for="existencias">existencias</label>
+        <input required id="existencias" type="text" class="form-control" name="existencias" size="30" />
+    </div>
+    <div class="form-group">
+        <label for="precio">precio</label>
+        <input required id="precio" type="text" class="form-control" name="precio" size="30" />
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control">
+            <span class="glyphicon glyphicon-save"></span> Save</button>
+    </div>
+</form>
+<br>
+<br>

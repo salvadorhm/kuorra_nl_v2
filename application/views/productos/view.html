@@ -1,0 +1,19 @@
+$def with(productos)
+<h3>
+    <a href="/productos">productos</a>
+</h3>
+<iframe 
+    srcdoc="<html><body>$productos.producto</body></html>" 
+    width="100%"
+    frameborder="0" 
+    scrolling="no" 
+    onload="resizeIframe(this)">
+</iframe>
+<br>
+
+<strong>Existencias:</strong> $productos.existencias <br>
+<strong>Precio:</strong> $productos.precio <br>
+
+<br>
+<br>
+<br>

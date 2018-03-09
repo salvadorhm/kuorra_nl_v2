@@ -1,0 +1,30 @@
+$def with(pages_urls)
+<h3>
+    <a href="/pages_urls">URLS</a>
+</h3>
+<table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>Privilege</th>
+            <th>URL</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        $for item in pages_urls:
+        <tr>
+            $if item.user_np == '0':
+                $ user = "Admin"
+            $elif item.user_np == '1':
+                $ user = "Guess"
+            <td><a href='/pages_urls/view/$item.id_page_url'>$user</a></td>
+            <td><a href='/pages_urls/view/$item.id_page_url'>$item.url_full</a></td>
+            <td>
+                <a href='/pages_urls/edit/$item.id_page_url'><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+                <a href='/pages_urls/delete/$item.id_page_url'><span class="glyphicon glyphicon-trash"></span>Del</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>

@@ -1,0 +1,38 @@
+$def with(pages_urls, message)
+<h3>
+    <a href="/pages_urls">URLS</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+<br>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id_page_url" id="id_page_url" value="$pages_urls.id_page_url" />
+
+    <div class="form-group">
+    <label for="user_np">user_np</label>
+    <input readonly id="user_np" type="text" class="form-control" name="user_np" size="30" value="$pages_urls.user_np"/>
+</div><div class="form-group">
+    <label for="get_url">get_url</label>
+    <input readonly id="get_url" type="text" class="form-control" name="get_url" size="30" value="$pages_urls.get_url"/>
+</div><div class="form-group">
+    <label for="post_url">post_url</label>
+    <input readonly id="post_url" type="text" class="form-control" name="post_url" size="30" value="$pages_urls.post_url"/>
+</div><div class="form-group">
+    <label for="controller">controller</label>
+    <input readonly id="controller" type="text" class="form-control" name="controller" size="30" value="$pages_urls.controller"/>
+</div><div class="form-group">
+    <label for="c_view">c_view</label>
+    <input readonly id="c_view" type="text" class="form-control" name="c_view" size="30" value="$pages_urls.c_view"/>
+</div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+    </div>
+</form>
+<br>
+<br>
+<br>

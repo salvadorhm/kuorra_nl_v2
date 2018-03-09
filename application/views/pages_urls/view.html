@@ -1,0 +1,21 @@
+$def with(pages_urls)
+<h3>
+    <a href="/pages_urls">URLS</a>
+</h3>
+$if pages_urls.user_np == '0':
+    <strong>Privilege:</strong> Admin <br>
+$elif pages_urls.user_np == '1':
+    <strong>Privilege:</strong> Guess<br>
+$if pages_urls.get_url == 1:
+    <strong>GET:</strong> Yes <br>
+$else:
+    <strong>GET:</strong> No <br>
+
+$if pages_urls.post_url == 1:
+    <strong>POST:</strong> Yes <br>
+$else:
+    <strong>POST:</strong> No <br>
+<strong>Page:</strong> $pages_urls.url_full <br>
+
+<br>
+<br>

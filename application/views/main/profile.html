@@ -1,0 +1,24 @@
+$def with(params, users)
+$var username: $params['username']
+$var privilege: $params['privilege']
+
+<h3>
+    <a href="/">Profile</a>
+</h3>
+<strong>Name:</strong> $users.name <br>
+<strong>Username:</strong> $users.username <br>
+<strong>Email:</strong> $users.email <br>
+<strong>Other:</strong> $users.other_data <br>
+<strong>UserHash:</strong> $users.user_hash <br>
+$if users.privilege == 0:
+    <strong>Privilege:</strong> Admin<br>
+$else:
+    <strong>Privilege:</strong> Guess<br>
+$if users.api_access == 0:
+    <strong>Api Access:</strong> Disabled<br>
+$elif users.api_access == 1:
+    <strong>Api Access:</strong> Enabled<br>
+    
+<strong>Created:</strong> $users.created <br>
+<br>
+<br>
