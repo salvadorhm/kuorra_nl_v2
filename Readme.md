@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Kuorra scanffolding is a Web.py Microframework Frontend, use kuorra to create a MVC skeleton for work with Web.py, MySQL and Heroku App.
+Kuorra is a model for fast webapp development
 
 this template have the next functions
 
