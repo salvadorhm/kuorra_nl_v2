@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Kuorra is a model for fast webapp development
+Kuorra is a model for fast webapp development and scanffolding.
 
 this template have the next functions
 
