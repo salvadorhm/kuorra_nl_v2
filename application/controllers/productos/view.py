@@ -17,12 +17,12 @@ class View:
             
             access = config.model_pages_urls.get_pages_urls_access(session_privilege,"productos","view")
             if access != None:
-                if access.get_url == 1: # admin user
+                if access.get_url == 1: # access True
                     return self.GET_VIEW(id_producto) # call GET_VIEW() function
-                elif access.get_url == 0: # guess user
+                elif access.get_url == 0: # access False
                     raise config.web.seeother('/') # render guess.html
             else:
-                raise config.web.seeother('/') # render guess.html
+                raise config.web.seeother('/') # render index.html
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 

@@ -10,19 +10,19 @@ class Insert:
 
     def GET(self):
         if app.session.loggedin is True:
-            # session_username = app.session.username
-            session_username = app.session.privilege  # get the session_privilege
-            if session_username == 0: # admin user
+            # session_username = config.check_secure_val(app.session.username)
+            session_privilege = int(config.check_secure_val(app.session.privilege))  # get the session_privilege
+            if session_privilege == 0: # admin user
                 return self.GET_INSERT() # call GET_INSERT() function
-            elif session_username == 1: # guess user
+            elif session_privilege == 1: # guess user
                 raise config.web.seeother('/guess') # render guess.html
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
     def POST(self):
         if app.session.loggedin is True: # validate if the user is logged
-            # session_username = app.session.username
-            session_privilege = app.session.privilege # get the session_privilege
+            # session_username = config.check_secure_val(app.session.username)
+            session_privilege = int(config.check_secure_val(app.session.privilege)) # get the session_privilege
             if session_privilege == 0: # admin user
                 return self.POST_INSERT() # call POST_EDIT function
             elif session_privilege == 1: # guess user

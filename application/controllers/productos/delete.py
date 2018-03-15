@@ -34,9 +34,9 @@ class Delete:
             
             access = config.model_pages_urls.get_pages_urls_access(session_privilege,"productos","delete")
             if access != None:
-                if access.post_url == 1: # admin user
+                if access.post_url == 1: # access True
                     return self.POST_DELETE(id_producto) # call POST_DELETE function
-                elif access.post_url == 0: # guess user
+                elif access.post_url == 0: # access False
                     raise config.web.seeother('/') # render guess.html
             else:
                 raise config.web.seeother('/') # render guess.html

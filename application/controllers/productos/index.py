@@ -16,9 +16,9 @@ class Index:
             
             access = config.model_pages_urls.get_pages_urls_access(session_privilege,"productos","index")
             if access != None:
-                if access.get_url == 1: # admin user
+                if access.get_url == 1: # access True
                     return self.GET_INDEX() # call GET_INDEX() function
-                elif access.get_url == 0: # guess user
+                elif access.get_url == 0: # access False
                     raise config.web.seeother('/') # rendner guess.html
             else:
                 raise config.web.seeother('/') # rendner guess.html

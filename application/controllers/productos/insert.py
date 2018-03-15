@@ -17,9 +17,9 @@ class Insert:
             
             access = config.model_pages_urls.get_pages_urls_access(session_privilege,"productos","insert")
             if access != None:
-                if access.get_url == 1: # admin user
+                if access.get_url == 1: # access True
                     return self.GET_INSERT() # call GET_INSERT() function
-                elif access.get_url == 0: # guess user
+                elif access.get_url == 0: # access False
                     raise config.web.seeother('/') # render guess.html
             else:
                 raise config.web.seeother('/') # render guess.html
@@ -35,9 +35,9 @@ class Insert:
             
             access = config.model_pages_urls.get_pages_urls_access(session_privilege,"productos","insert")
             if access != None:
-                if access.post_url == 1: # admin user
+                if access.post_url == 1: # access True
                     return self.POST_INSERT() # call POST_EDIT function
-                elif access.post_url == 0: # guess user
+                elif access.post_url == 0: # access False
                     raise config.web.seeother('/') # render guess.html
             else:
                 raise config.web.seeother('/') # render guess.html
