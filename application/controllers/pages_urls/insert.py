@@ -45,6 +45,32 @@ class Insert:
             pages.append(controller + "-" + c_view)
         
         x = dict(zip(url, pages))
+        remove_urls = ["/", 
+                    "/404", 
+                    "/500",
+                    "/login",
+                    "/logout",
+                    "/logs",
+                    "/logs/printer",
+                    "/logs/view/",
+                    "/pages_urls",
+                    "/pages_urls/delete/",
+                    "/pages_urls/edit/",
+                    "/pages_urls/view/",
+                    "/pages_urls/insert",
+                    "/profile",
+                    "/users",
+                    "/users/change_pwd",
+                    "/users/delete/",
+                    "/users/edit/",
+                    "/users/insert",
+                    "/users/printer",
+                    "/users/view/"
+                    ]
+        
+        for url in remove_urls:
+            x.pop(url)
+
         sorted_x = sorted(x.items(), key=operator.itemgetter(0))
         return config.render.insert(sorted_x) # render insert.html
 
