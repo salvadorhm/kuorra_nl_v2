@@ -12,5 +12,6 @@ class Logout:
             config.validate_https() # validate HTTPS connection
         app.session.username = 'anonymous'
         app.session.privilege = -1
+        app.session.expires = '0000-00-00 00:00:00'
         app.session.kill()
         raise config.web.seeother('/')

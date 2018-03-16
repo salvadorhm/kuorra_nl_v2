@@ -9,8 +9,13 @@ import web
 import config
 import urls
 
-#activate ssl certificate
+# activate ssl certificate
 ssl = False
+
+# time session
+expires = 1 # minutes
+
+# get urls
 urls = urls.urls
 
 app = web.application(urls, globals())
@@ -31,6 +36,7 @@ if web.config.get('_session') is None:
         'login': 0,
         'privilege': -1,
         'user': 'anonymous',
+        'expire': '0000-00-00 00:00:00',
         'loggedin': False,
         'count': 0
         }

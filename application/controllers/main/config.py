@@ -8,7 +8,6 @@ render = web.template.render('application/views/main/', base='master')
 
 secret_key = "kuorra_key"
 
-expires = 1 # minutes
 
 def validate_https():
     if app.web.ctx.protocol == "http":
@@ -16,8 +15,6 @@ def validate_https():
             dom = dom.replace("http","https")
             dom += app.web.ctx.path
             raise app.web.seeother(dom)
-
-secret_key = "kuorra_key"
 
 
 def hash_str(s):

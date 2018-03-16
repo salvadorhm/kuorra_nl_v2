@@ -43,4 +43,5 @@ class Index:
             params = {}
             params['username'] = 'anonymous'
             params['privilege'] = '-1'
+            params['expire'] = "0000-00-00 00:00:00"
             return config.render.index(params)

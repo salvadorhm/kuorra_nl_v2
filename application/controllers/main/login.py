@@ -29,13 +29,13 @@ class Login:
             app.session.privilege = config.make_secure_val(str(check['privilege']))
             # get time now and add 1 minute
             now = datetime.datetime.now()
-            future = now + datetime.timedelta(minutes = config.expires)
+            future = now + datetime.timedelta(minutes = app.expires)
             future_str = str(future).split('.')[0]
             app.session.expires = config.make_secure_val(future_str)
 
             change_pwd = check['change_pwd']
             ip = web.ctx['ip']
-            #res = config.model_logs.insert_logs(check['username'], ip)
+            res = config.model_logs.insert_logs(check['username'], ip)
 
             if check['status'] == 0:
                 message = "User account disabled!!!!"
