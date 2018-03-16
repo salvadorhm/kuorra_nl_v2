@@ -27,7 +27,7 @@ class Login:
             app.session.loggedin = True
             app.session.username = config.make_secure_val(check['username'])
             app.session.privilege = config.make_secure_val(str(check['privilege']))
-            # get time now and add 1 minute
+            # get time now and N minutes
             now = datetime.datetime.now()
             future = now + datetime.timedelta(minutes = app.expires)
             future_str = str(future).split('.')[0]
