@@ -1,7 +1,7 @@
 import web
 
 db_host = 'localhost'
-db_name = 'kuorra_access'
+db_name = 'kuorra_nl_v2'
 db_user = 'kuorra00'
 db_pw = 'kuorra.2018'
 

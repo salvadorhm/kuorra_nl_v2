@@ -1,6 +1,6 @@
-CREATE DATABASE kuorra_access;
+CREATE DATABASE kuorra_nl_v2;
 
-USE kuorra_access;
+USE kuorra_nl_v2;
 
 CREATE TABLE users(
     username varchar(20) NOT NULL PRIMARY KEY,
@@ -62,8 +62,7 @@ SELECT * FROM pages_urls;
 
 SELECT * FROM productos;
 
-/*
+
 CREATE USER 'kuorra00'@'localhost' IDENTIFIED BY 'kuorra.2018';
-GRANT ALL PRIVILEGES ON kuorra_access.* TO 'kuorra00'@'localhost';
+GRANT ALL PRIVILEGES ON kuorra_nl_v2.* TO 'kuorra00'@'localhost';
 FLUSH PRIVILEGES;
-*/
