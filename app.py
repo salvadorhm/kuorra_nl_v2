@@ -15,12 +15,12 @@ urls = urls.urls
 
 app = web.application(urls, globals())
 
-'''
+"""
 if ssl is True:
     from web.wsgiserver import CherryPyWSGIServer
     CherryPyWSGIServer.ssl_certificate = "ssl/server.crt"
     CherryPyWSGIServer.ssl_private_key = "ssl/server.key"
-'''
+"""
 if web.config.get('_session') is None:
     db = config.db
     store = web.session.DBStore(db, 'sessions')
