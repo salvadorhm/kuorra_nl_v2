@@ -4,10 +4,11 @@
 import application.models.model_users as model_users
 import web
 import hmac
+import app
 
 render = web.template.render('application/views/users/', base='master')
 
-secret_key = "kuorra_key"
+secret_key = app.secret_key
 
 
 def hash_str(s):

@@ -6,7 +6,7 @@ import application.models.model_pages_urls as model_pages_urls
 
 render = web.template.render('application/views/productos/', base='master')
 
-secret_key = "kuorra_key"
+secret_key = app.secret_key
 
 
 def hash_str(s):

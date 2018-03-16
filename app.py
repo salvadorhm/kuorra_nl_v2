@@ -18,6 +18,9 @@ expires = 1 # minutes
 # get urls
 urls = urls.urls
 
+# key for HMAC
+secret_key = "kuorra_key"
+
 app = web.application(urls, globals())
 
 """

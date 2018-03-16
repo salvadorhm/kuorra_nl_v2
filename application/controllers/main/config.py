@@ -6,7 +6,7 @@ import app
 
 render = web.template.render('application/views/main/', base='master')
 
-secret_key = "kuorra_key"
+secret_key = app.secret_key
 
 
 def validate_https():

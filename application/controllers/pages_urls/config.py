@@ -1,10 +1,11 @@
 import web
 import hmac
 import application.models.model_pages_urls as model_pages_urls
+import app
 
 render = web.template.render('application/views/pages_urls/', base='master')
 
-secret_key = "kuorra_key"
+secret_key = app.secret_key
 
 def hash_str(s):
     return hmac.new(secret_key, s).hexdigest()
