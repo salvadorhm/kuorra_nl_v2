@@ -1,5 +1,7 @@
 import application.controllers.logs.config as config
 import app
+import time
+import datetime
 
 
 class Index:
@@ -9,6 +11,20 @@ class Index:
 
     def GET(self):
         if app.session.loggedin is True:
+            # get now time
+            now = datetime.datetime.now()
+            now_str = str(now).split('.')[0]
+
+            expires = config.check_secure_val(app.session.expires)
+
+            print "now    : " , now_str
+            print "expires: " , expires
+
+            expires = config.check_secure_val(app.session.expires)
+
+            if (now_str > expires): # compare now with time login
+                raise config.web.seeother('/logout')
+
             # session_username = config.check_secure_val(app.session.username) # get the session_username
             session_privilege = int(config.check_secure_val(app.session.privilege)) # get the session_privilege
             if session_privilege == 0:

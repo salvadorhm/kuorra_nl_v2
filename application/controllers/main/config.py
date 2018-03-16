@@ -8,6 +8,8 @@ render = web.template.render('application/views/main/', base='master')
 
 secret_key = "kuorra_key"
 
+expires = 1 # minutes
+
 def validate_https():
     if app.web.ctx.protocol == "http":
             dom = app.web.ctx.homedomain
