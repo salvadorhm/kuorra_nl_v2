@@ -6,7 +6,7 @@ kuorra version: 0.7.3.0
 Created: 07/Mar/2018
 '''
 import web
-import config
+import db
 import urls
 
 # activate ssl certificate
@@ -21,6 +21,9 @@ urls = urls.urls
 # key for HMAC
 secret_key = "kuorra_key"
 
+# config db
+db = db.db
+
 app = web.application(urls, globals())
 
 """
@@ -30,7 +33,6 @@ if ssl is True:
     CherryPyWSGIServer.ssl_private_key = "ssl/server.key"
 """
 if web.config.get('_session') is None:
-    db = config.db
     store = web.session.DBStore(db, 'sessions')
     session = web.session.Session(
         app,
@@ -54,10 +56,10 @@ class Count:
         return str(session.count)
 
 def InternalError(): 
-    raise config.web.seeother('/500')
+    raise web.seeother('/500')
 
 def NotFound():
-    raise config.web.seeother('/404')
+    raise web.seeother('/404')
 
 if __name__ == "__main__":
     db.printing = False # hide db transactions

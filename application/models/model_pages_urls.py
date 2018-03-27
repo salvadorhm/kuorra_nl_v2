@@ -1,7 +1,7 @@
 import web
-import config
+import app
 
-db = config.db
+db = app.db
 
 
 def get_all_pages_urls():

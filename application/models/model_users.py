@@ -1,7 +1,7 @@
 import web
-from . import config
+import app
 
-db = config.db
+db = app.db
 
 
 def validate_user(username, password):
