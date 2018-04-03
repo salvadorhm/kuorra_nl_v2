@@ -3,7 +3,7 @@ Author : Salvador Hernandez Mendoza
 Email  : salvadorhm@gmail.com
 Twitter: @salvadorhm
 kuorra version: 0.7.3.0
-Created: 07/Mar/2018
+Created: 03/Abr/2018
 '''
 import web
 import db

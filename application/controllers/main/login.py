@@ -35,7 +35,9 @@ class Login:
 
             change_pwd = check['change_pwd']
             ip = web.ctx['ip']
-            res = config.model_logs.insert_logs(check['username'], ip)
+            result = config.model_logs.insert_logs(check['username'], ip)
+            if result == None:
+                print "Error in log"
 
             if check['status'] == 0:
                 message = "User account disabled!!!!"
