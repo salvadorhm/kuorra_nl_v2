@@ -26,5 +26,6 @@ urls = (
     '/productos/edit/(.+)', 'application.controllers.productos.edit.Edit',
     '/productos/delete/(.+)', 'application.controllers.productos.delete.Delete',
     '/productos/insert/?', 'application.controllers.productos.insert.Insert',
+    '/productos/import/?', 'application.controllers.productos.import_file.Import_File',
     '/api_productos/?', 'application.api.productos.api_productos.Api_productos',
 )

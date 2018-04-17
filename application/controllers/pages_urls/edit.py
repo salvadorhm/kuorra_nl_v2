@@ -21,7 +21,6 @@ class Edit:
             print "now    : " , now_str
             print "expires: " , expires
 
-            expires = config.check_secure_val(app.session.expires)
 
             if (now_str > expires): # compare now with time login
                 raise config.web.seeother('/logout')

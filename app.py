@@ -13,7 +13,7 @@ import urls
 ssl = False
 
 # time session
-expires = 1 # minutes
+expires = 5 # minutes
 
 # get urls
 urls = urls.urls

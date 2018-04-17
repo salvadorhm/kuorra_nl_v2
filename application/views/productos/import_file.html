@@ -1,0 +1,29 @@
+$def with(message)
+
+
+<h3>
+    <a href="/productos">productos</a>
+</h3>
+$if message == "Import succefull!!":
+    <div class="alert alert-success">
+        $message
+    </div>
+$elif message == "Error: check values!!!":
+    <div class="alert alert-warning">
+        <strong>Warning</strong> $message
+    </div>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file">File</label>
+        <input required id="file" type="file" class="form-control" name="file" size="30" />
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control">
+            <span class="glyphicon glyphicon-save"></span> Import</button>
+    </div>
+</form>
+<br>
+<br>
