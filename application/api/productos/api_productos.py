@@ -20,7 +20,7 @@ http://localhost:8080/api_table_name?user_hash=XXXX&action=put&field1=XX&field2=
 
 '''
 import web
-import config
+import application.api.productos.config
 import json
 import application.models.model_users as model_users
 
