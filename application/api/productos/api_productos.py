@@ -40,7 +40,7 @@ class Api_productos:
                     data.append(tmp)
                 web.header('Content-Type', 'application/json')
                 response = {"result":[{"status":200}],"data":data}
-                return json.dumps(response, ensure_ascii=False).encode('utf8')
+                # return json.dumps(response, ensure_ascii=False).encode('utf8')
             else:
             # GET one table row
                 result = config.model_productos.get_productos(int(id_producto))
@@ -48,7 +48,7 @@ class Api_productos:
                 data.append(dict(result))
                 response = {"result":[{"status":200}],"data":data}
                 web.header('Content-Type', 'application/json')
-                return json.dumps(response, ensure_ascii=False).encode('utf8')
+            return json.dumps(response, ensure_ascii=False).encode('utf8')
         except Exception as e:
             print "GET Error {}".format(e.args)
             e = str(e.args)
