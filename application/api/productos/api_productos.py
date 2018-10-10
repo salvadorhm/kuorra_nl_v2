@@ -63,7 +63,7 @@ class Api_productos:
         try:
             result = config.model_productos.insert_productos(producto,existencias,precio)
             response = {}
-            if type(result) == long:
+            if  isinstance(result,long):
                 response = {"result":[{"status":200}],"data":[]}
             else:
                 response = {"result":[{"status":400,"error":result}], "data":[]}
