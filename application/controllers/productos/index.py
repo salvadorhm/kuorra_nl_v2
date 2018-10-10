@@ -8,7 +8,7 @@ class Index:
         pass
     
     def GET(self):
-        if app.ssl == True:
+        if app.ssl is True:
             config.validate_https() # validate HTTPS connection
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = config.check_secure_val(app.session.username) # get the session_username
